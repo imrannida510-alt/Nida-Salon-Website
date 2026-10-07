@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nida's Salon - Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8f8;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8e3b5f;
+        }
+
+        .dashboard {
+            max-width: 1000px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ddd;
+        }
+
+        .card h2 {
+            color: #8e3b5f;
+        }
+
+        .card p {
+            font-size: 35px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .back {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px;
+            text-align: center;
+            background-color: #8e3b5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Nida's Salon Dashboard</h1>
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h2>Total</h2>
+            <p>{{ total }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Confirmed</h2>
+            <p>{{ confirmed }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Completed</h2>
+            <p>{{ completed }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Cancelled</h2>
+            <p>{{ cancelled }}</p>
+        </div>
+
+    </div>
+
+    <a href="/admin" class="back">Back to Admin</a>
+
+</body>
+
+</html>

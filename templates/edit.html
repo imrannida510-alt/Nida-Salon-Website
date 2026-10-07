@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Booking - Nida's Salon</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8f8;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8e3b5f;
+        }
+
+        form {
+            width: 400px;
+            max-width: 90%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #8e3b5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Edit Booking</h1>
+
+    <form method="POST">
+
+        <label>Customer Name</label>
+        <input type="text" name="name" value="{{ booking[1] }}" required>
+
+        <label>Service</label>
+        <select name="service" required>
+            <option value="Haircut" {% if booking[2] == "Haircut" %}selected{% endif %}>Haircut</option>
+            <option value="Facial" {% if booking[2] == "Facial" %}selected{% endif %}>Facial</option>
+            <option value="Waxing" {% if booking[2] == "Waxing" %}selected{% endif %}>Waxing</option>
+            <option value="Makeup" {% if booking[2] == "Makeup" %}selected{% endif %}>Makeup</option>
+        </select>
+
+        <label>Date</label>
+        <input type="date" name="date" value="{{ booking[3] }}" required>
+
+        <label>Time</label>
+        <input type="time" name="time" value="{{ booking[4] }}" required>
+
+        <button type="submit">Update Booking</button>
+
+    </form>
+
+</body>
+
+</html>
